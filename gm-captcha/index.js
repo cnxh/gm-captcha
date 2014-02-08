@@ -3,15 +3,15 @@ var gm = require('gm'),
 dir = __dirname
 
 var options = {
-	color: '', // 指定字体颜色 不指定时随机颜色
-	width: 100, // captcha图片宽度 单位px
-	height: 30, // captcha图片高度 单位px
-	stringSet: "abcdhkmnrstuvwxz", // 生成验证码的字符集 注意需要字体文件支持
-	stringLength: 4, // captcha字符个数
-	stringWidth: 20, // captcha字符宽度  单位px
-	font: "comic.ttf", // 字体文件  位于fonts目录下
-	fontSize: 35, // 字体大小
-	noise: 'laplacian' // 干扰 uniform/gaussian/multiplicative/impulse/laplacian/poisson
+	color: '', // font color, random defalut
+	width: 100, // image's width (px)
+	height: 30, // image's height (px)
+	stringSet: "abcdhkmnrstuvwxz", // char sets
+	stringLength: 4, // char number
+	stringWidth: 20, // width of each char (px)
+	font: "comic.ttf", // font file
+	fontSize: 35, // font size
+	noise: 'laplacian' // noise: uniform/gaussian/multiplicative/impulse/laplacian/poisson
 
 }
 
@@ -41,7 +41,6 @@ module.exports = {
 			text += options.stringSet.charAt(Math.floor(Math.random() * length))
 			size--
 		}
-		logger.debug(module)
 		for (i = 0; i < text.length; i++) {
 			var color = options.color ? options.color : 'rgb(' + Math.floor(Math.random() * 150) + ',' 
 					+ Math.floor(Math.random() * 150) + ',' 
