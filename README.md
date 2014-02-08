@@ -2,6 +2,8 @@
 
 captcha for gm (https://github.com/aheckmann/gm), another node captcha lib.
 
+"session" and "gm" are required before using the gm-captcha
+
 ##demo
 ![](https://github.com/cnxh/gm-captcha/blob/master/demo.png?raw=true)
 
